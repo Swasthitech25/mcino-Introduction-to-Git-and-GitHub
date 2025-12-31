@@ -1,24 +1,9 @@
-# This script calculates yearly compound interest given principal, annual rate of interest and time period in years.
-# Do not use this in production. Sample purpose only.
+# This program calculates compound interest
 
-# Author: Upkar Lidder (IBM)
+principal = float(input("Enter principal amount: "))
+rate = float(input("Enter rate of interest: "))
+time = float(input("Enter time (in years): "))
 
-# Input:
-# p, principal amount
-# t, time period in years
-# r, annual rate of interest
+compound_interest = principal * ((1 + rate / 100) ** time)
 
-# Output:
-# compound interest = p * (1 + r/100)^t
-
-
-def compound_interest(p, t, r):
-    return p * (pow((1 + r / 100), t))
-
-
-if __name__ == "__main__":
-    p = float(input("Enter the principal amount: "))
-    t = float(input("Enter the time period: "))
-    r = float(input("Enter the rate of interest: "))
-
-    print("The compound interest is {:.2f}".format(compound_interest(p, t, r)))
+print("Compound Interest is:", round(compound_interest, 2))
